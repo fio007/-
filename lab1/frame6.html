@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   	<head>
+      	<title>HTML Document</title>
+      	<link rel="stylesheet" type="text/css" href="../lab3/main.css">
+      	
+   	</head>
+   	<body>
+		<p id="p1">test text</p>
+		<select id="s1" onchange="document.getElementById('p1').style.font-family = this.value">
+			<option value="Arial">Arial</option>
+			<option value="Times New Roman">Times New Roman</option>
+		</select>
+		<br/>
+		<select id="s2" onchange="document.getElementById('p1').style.color = this.value">
+			<option value="red">red</option>
+			<option value="green">green</option>
+		</select>
+   	</body>
+</html>

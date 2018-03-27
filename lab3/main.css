@@ -1,0 +1,61 @@
+body {
+	background-color: LightGray;
+	font-size: 12px;
+	color: black;
+	font-family: "Arial"
+}
+
+p {
+	align: left;
+	text-indent: 20px;
+}
+
+p:first-letter {
+	font-size: 20px;
+	color: red;
+}
+
+a:link {  }
+
+a:visited {
+	color: blue;
+	text-decoration: none;
+}
+
+a:active {
+	color: green;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+}
+
+.img {
+	position: absolute;
+	height: 250px;
+}
+
+#img1 {
+	top: 240px;
+	right: 400px;
+	z-index: 1;
+}
+
+#img2 {
+	top: 50px;
+	right: 500px;
+	z-index: 2;
+}
+
+#img3 {
+	top: 20px;
+	right: 230px;
+	z-index: 3;
+}
+
+#img4 {
+	top: 220px;
+	right: 80px;
+	z-index: 4;
+}
