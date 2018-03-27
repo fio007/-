@@ -1,0 +1,172 @@
+<HTML><HEAD><TITLE>Лабораторная работа 2</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<SCRIPT language=JavaScript>
+function fulltime() {
+	var time=new Date();
+	document.clock.full.value=time.toLocaleString();
+	setTimeout('fulltime()',500)
+}
+function clock_status()
+         {
+         window.setTimeout("clock_status()",100);
+	 today=new Date();
+	 self.status=today.toString();
+	 }
+function clock_form()
+         {
+	 day=new Date()
+	 clock_f=day.getHours()+":"+day.getMinutes()+":"+day.getSeconds()
+	 document.form.f_clock.value=clock_f
+         id=setTimeout("clock_form()",100)
+	 }
+
+</SCRIPT>
+<LINK href="main.css" type=text/css rel=stylesheet>
+<META http-equiv=Content-Language content=ru>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY topMargin=0 onload=clock_status()>
+<DIV class=body>
+<DIV class=main2>
+<P class=headlab>Лабораторная работа 2
+<P class=head>Управление сценариями просмотра Web-страниц с помощью 
+JavaScript.<BR>&nbsp;
+<P class=target><B>Цель работы:</B> формирование умений использования <SPAN 
+lang=en-us>JavaScript </SPAN><SPAN lang=ru>для управления сценариями просмотра 
+Web-страниц</SPAN>
+<P class=head>Поясняющая информация 
+<P class=head2><BR><B>Информация о дате последнего изменения документа.</B>
+<P class=paragraf>Для этого в HTML-теге &lt;A&gt; используется свойство 
+lastModified объекта Document. Информацию можно выводить в диалоговое окно. Для 
+этого используется метод alert() объекта Window и обработчик событий 
+onMouseOver, включенные в HTML-тег &lt;A&gt;. В окне есть кнопка "OK", которая 
+закрывает диалоговое окно. 
+<P class=paragraf>&nbsp;
+<P class=paragraf>&lt;A href="http://atpp.vstu.edu.ru" onmouseover="alert('Дата 
+последней модификации этого документа - ' + document.lastModified)"&gt;Наведите 
+мышку на ссылку&lt;/A&gt;
+<P class=paragraf><BR><A 
+onmouseover="alert('Дата последней модификации этого документа - ' + document.lastModified)" 
+href="http://atpp.vstu.edu.ru/">Наведите мышку на ссылку</A> &nbsp;
+<P class=head2><B>Вывод текущей даты</B>
+<P class=paragraf>Используется объект Date и метод write объекта document. 
+<P class=paragraf><I>Дата клиентского компьютера<SPAN lang=en-us>!</SPAN></I>
+<P class=paragraf>
+<SCRIPT language=JavaScript>
+current_date = new Date();
+document.write("<p><b>Текущая дата вашего компьютера:</b> " + 
+current_date + ".<p>");
+</SCRIPT>
+<BR>Исходник<SPAN lang=en-us>:</SPAN><BR>&lt;SCRIPT 
+LANGUAGE="JavaScript"&gt;<BR>current_date = new 
+Date();<BR>document.write("&lt;p&gt;&lt;b&gt;Текущая дата <SPAN lang=ru>вашего 
+компьютера</SPAN>:&lt;/b&gt; " + <BR>current_date + 
+".&lt;p&gt;");<BR>&lt;/SCRIPT&gt;
+<P class=paragraf>&nbsp;
+<P class=paragraf>Также можно вывести сокращенный вариант для этого используются 
+методы getDate, getMonth, getYear. Обратите внимание, что нумерация месяцев 
+начинается с нуля. <BR><BR>
+<SCRIPT language=JavaScript>
+  current_date = new Date();
+  document.write("<b>Число:</b> " + current_date.getDate() + 
+  "." + current_date.getMonth() + "." + current_date.getYear() + ".");
+</SCRIPT>
+<BR><BR>Исходник<SPAN lang=en-us>:</SPAN><BR>&lt;SCRIPT 
+LANGUAGE="JavaScript"&gt;<BR>current_date = new 
+Date();<BR>document.write("&lt;<SPAN lang=en-us>b</SPAN>&gt;Число:&lt;/<SPAN 
+lang=en-us>b</SPAN>&gt; " + current_date.getDate() + <BR>"." + 
+current_date.getMonth() + "." + current_date.getYear() + 
+".");<BR>&lt;/SCRIPT&gt; 
+<P class=paragraf>&nbsp;
+<P class=paragraf>Или <SPAN lang=ru>для времени </SPAN>getHours<SPAN lang=ru>, 
+</SPAN>getMinutes<SPAN lang=ru>, </SPAN>getSeconds такой вариант: <BR><BR>
+<SCRIPT language=JavaScript>
+  current_date = new Date();
+  document.write("<b>Время:</b> " + current_date.getHours() + 
+  "." + current_date.getMinutes() + "." + current_date.getSeconds() +   ".");
+</SCRIPT>
+<BR><BR>Исходник<SPAN lang=en-us>:</SPAN><BR>&lt;SCRIPT 
+LANGUAGE="JavaScript"&gt;<BR>current_date = new 
+Date();<BR>document.write("&lt;<SPAN lang=en-us>b</SPAN>&gt;Время:&lt;/<SPAN 
+lang=en-us>b</SPAN>&gt; " + current_date.getHours() + <BR>"." + 
+current_date.getMinutes() + "." + current_date.getSeconds() + 
+".");<BR>&lt;/SCRIPT&gt; 
+<P class=paragraf>&nbsp;
+<P class=head2><B>Идущие часы </B>
+<P class=paragraf>Идущие часы можно поместить в строке статуса и в самом <SPAN 
+lang=en-us>HTML </SPAN>документе. 
+<P class=paragraf>Первый пример - скрипта, создающего часы в строке статуса при 
+загрузке документа: <BR><BR>Создаем функцию<BR>&lt;script 
+language="JavaScript"&gt;<BR>function 
+clock_status()<BR>{<BR>window.setTimeout("clock_status()",100);<BR>today=new 
+Date();<BR>self.status=today.toString();<BR>}<BR>&lt;/script&gt;<BR>&nbsp;
+<P class=paragraf>Вызываем функцию при загрузке документа в тэге <SPAN 
+lang=en-us>&lt;body&gt;</SPAN><BR>&lt;body 
+onLoad="clock_status()"&gt;<BR><BR><SPAN lang=ru>Работающие часы смотрите в 
+строке статуса.</SPAN>
+<P class=paragraf><SPAN lang=ru>Второй пример. Обратите внимание, что функция 
+вызывается в теле документа, а не в HTML-теге &lt;body&gt; как в предыдущем 
+примере. </SPAN>
+<P class=paragraf>Создаем функцию<BR><SPAN lang=ru>&lt;script 
+language="JavaScript"&gt;<BR>function fulltime() {<BR>var time=new 
+Date();<BR>document.clock.full.value=time.toLocaleString();<BR>setTimeout('fulltime()',500)<BR>}<BR>&lt;/script&gt;<BR>&nbsp;</SPAN>
+<P class=paragraf>Создаем форму<SPAN lang=ru><BR>&lt;form 
+name=clock&gt;<BR>&lt;input type=text size=35 
+name=full&gt;<BR>&lt;/form&gt;<BR>&nbsp;</SPAN>
+<P class=paragraf>Вызываем функцию в теле документа<SPAN lang=ru><BR>&lt;script 
+language="JavaScript"&gt;<BR>fulltime();<BR>&lt;/script&gt;<BR><BR>&nbsp;</SPAN>
+<P class=paragraf>Работающий пример<SPAN lang=en-us>:</SPAN>
+<P class=paragraf>
+<FORM name=clock><INPUT size=35 name=full> </FORM>&nbsp;
+<SCRIPT language=JavaScript>
+fulltime();
+  </SCRIPT>
+
+<P class=paragraf>Третий пример - скрипта, создающего часы (в сокращенном 
+варианте) в поле form 
+<P class=paragraf>Создаем функцию<BR>&lt;script 
+language="JavaScript"&gt;<BR>function clock_form()<BR>{<BR>day=new 
+Date()<BR>clock_f=day.getHours()+":"+day.getMinutes()+":"+day.getSeconds()<BR>document.form.f_clock.value=clock_f<BR>id=setTimeout("clock_form()",100)<BR>}<BR>&lt;/script&gt;
+<P class=paragraf>&nbsp;
+<P class=paragraf>Создаем форму<BR>&lt;form name=form 
+metod="get"&gt;<BR>&lt;input name=f_clock maxlength=8 
+size=8&gt;<BR>&lt;/form&gt;<BR>&nbsp;
+<P class=paragraf>Вызываем функцию в теле документа<BR>&lt;script 
+language="JavaScript"&gt;<BR>clock_form();<BR>&lt;/script&gt;<BR>&nbsp;
+<P class=paragraf>Работающий пример<SPAN lang=en-us>:</SPAN>
+<P class=paragraf>&nbsp; 
+<FORM name=form metod="get">
+<P><INPUT maxLength=8 size=8 name=f_clock> </P></FORM>
+<SCRIPT language=JavaScript>
+clock_form();
+</SCRIPT>
+
+<P class=head2>&nbsp;
+<P class=paragraf>&nbsp;
+<P class=paragraf>&nbsp;
+<P class=head><SPAN lang=ru>Практические задания</SPAN>
+<P class=head2><B>Задание 1</B>
+<OL>
+  <LI>
+  <P class=paragraf>Сделайте на главной странице предыдущего задания
+  вывод даты и времени загрузки страницы. </P>
+  <LI>
+  <P class=paragraf>Проверьте работоспособность страницы. </P></LI></OL>
+<P class=head2><B>Задание 2</B>
+<OL>
+  <LI>
+  <P class=paragraf>Сделайте на главной странице предыдущего задания
+  вывод информации об используемом браузере.<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Для этого используйте свойства объекта <B>navigator</B>:<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;appName (имя браузера)<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;appVersion (версия)<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;appCodeName (кодовое название)<BR>
+  &nbsp;&nbsp;&nbsp;&nbsp;userAgent (пользовательский агент).</P>
+  <LI>
+  <P class=paragraf>Проверьте работоспособность страницы. </P></LI></OL>
+<P><I><B>К сдаче лабораторной предоставляются:</B> работающие страницы 
+с комментариями в исходнике.</I>
+<P>&nbsp;</P></DIV>
+<DIV class=botom>
+<HR width="80%">
+</DIV></DIV></BODY></HTML>

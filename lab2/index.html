@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+        	function verificate (){
+        		if (document.getElementById("last_name").value && document.getElementById("first_name").value && document.getElementById("otch").value && document.getElementById("email").value && document.getElementById("prof").value && document.getElementById("password").value && (document.getElementById("langjp").value || document.getElementById("langeu").value || document.getElementById("langsp").value || document.getElementById("langar").value || document.getElementById("langpr").value || document.getElementById("langru").value)) { 
+        			return true;
+	        		window.close();
+        		}
+        		alert("Заполните все поля");
+        		return false;
+        	}
+        </script>
+    </head>
+    <body>
+		<form id="form" action="#" method="POST" onsubmit="return verificate()">
+			<p>
+				<label>Фамилия</label>
+				<input type="text" id="last_name" value="Mushnikov">
+			</p>
+			<p>
+				<label>Имя</label>
+				<input type="text" id="first_name" value="Kirill">
+			</p>
+			<p>
+				<label>Отчество</label>
+				<input type="text" id="otch" value="Alekseevich">
+			</p>
+			<p>
+				<label>Email</label>
+				<input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="qwert@yandex.ru">
+			</p>
+			<p>
+				<label>Страна</label>
+				<select name="country">
+					<option>Канада</option>
+					<option>Франция</option>
+					<option>Германия</option>
+					<option>Италия</option>
+					<option>Япония</option>
+					<option selected="true">Россия</option>
+					<option>Великобритания</option>
+					<option>США</option>
+					<option>Испания</option>
+					<option>Польша</option>
+				</select>
+			</p>
+			<p>
+				<label>Язык:</label>
+				<label>
+					<input id="langjp" type="checkbox" name="langjp" value="китайский">
+					китайский
+				</label>
+				<label>
+					<input id="langeu" type="checkbox" name="langeu" value="английский">
+					английский
+				</label>
+				<label>
+					<input id="langsp" type="checkbox" name="langsp" value="испанский">
+					испанский
+				</label>
+				<label>
+					<input id="langar" type="checkbox" name="langar" value="арабский">
+					арабский
+				</label>
+				<label>
+					<input id="langpr" type="checkbox" name="langpr" value="португайльский">
+					португайльский
+				</label>
+				<label>
+					<input id="langru" type="checkbox" name="langru" value="русский" checked="true">
+					русский
+				</label>
+			</p>
+			<p>
+				<label>Профессия</label>
+				<select id="prof" name="prof" multiple>
+					<option>проф1</option>
+					<option>проф2</option>
+					<option>проф3</option>
+					<option>проф4</option>
+					<option>проф5</option>
+				</select>
+			</p>
+			<p>
+				<label>Пароль</label>
+				<input id="password" type="password" value="11111" minlength="5" name="password">
+			</p>
+			<textarea name="address" rows="10" cols="30"></textarea>
+			<p>
+				<input type="submit" value="Отправить"> 
+				<input type="reset" value="Очистить поля формы">
+			</p>
+		</form>
+		<input type="button" value="Close" onClick="window.close()">
+    </body>
+</html>

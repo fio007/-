@@ -1,0 +1,233 @@
+<HTML><HEAD><TITLE>Лабораторная работа 2</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<LINK href="main.css" type=text/css rel=stylesheet>
+<META http-equiv=Content-Language content=ru>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY topMargin=0>
+<DIV class=body>
+<DIV class=main2>
+<P class=headlab>Лабораторная работа 2
+<P class=head>Формы в HTML-документах<BR>&nbsp;
+<P class=target><B>Цель работы:</B> формирование умений создание форм с помощью 
+<SPAN lang=en-us>HTML</SPAN>.
+<P class=head>Поясняющая информация </P>
+<P class=paragraf>Формы передают информацию программам-обработчикам в виде пар 
+[имя переменной]=[значение переменной]. Имена переменных следует задавать 
+латинскими буквами.
+<P class=paragraf>Значения переменных воспринимаются обработчиками как строки, 
+даже если они содержат только цифры. 
+<P class=paragraf>Форма открывается тегом &lt;FORM&gt; и заканчивается меткой 
+&lt;/FORM&gt;. HTML-документ может содержать в себе несколько форм, однако формы 
+не должны находиться одна внутри другой.
+<P class=paragraf>Тег <B>&lt;FORM&gt;</B> может содержать три атрибута, один из 
+которых является обязательным: <BR><B>ACTION</B> Обязательный атрибут. 
+Определяет, где находится обработчик формы. <BR><B>METHOD</B> Определяет, каким 
+образом (иначе говоря, с помощью какого метода протокола передачи гипертекстов) 
+данные из формы будут переданы обработчику. Допустимые значения: METHOD=POST и 
+METHOD=GET. Если значение атрибута не установлено, по умолчанию предполагается 
+METHOD=GET. 
+<P class=paragraf><B><SPAN lang=en-us>GET</SPAN>: </B>методом "get" HTTP<SPAN 
+lang=en-us> </SPAN>браузер берёт значение action, добавляет `?' к нему, затем 
+присоединяет набор данных формы, кодированный с использованием типа содержимого 
+"application/x-www-form-urlencoded". Затем&nbsp; перенаправляет всё по 
+гиперссылке на этот URL. В этом сценарии данные формы ограничены кодами 
+ASCII<SPAN lang=ru> (нельзя использовать спецсимволы)</SPAN> и&nbsp; имеет<SPAN 
+lang=ru>ют</SPAN> весьма жесткие ограничения на объем вводимой информации.&nbsp; 
+
+<P class=paragraf><B><SPAN lang=en-us>POST</SPAN>:</B> методом "post" HTTP 
+браузер проводит транзакцию HTTP "post" (<SPAN lang=ru>в теле </SPAN>HTTP-<SPAN 
+lang=ru>запроса</SPAN>), используя значение атрибута action и сообщение, 
+созданное в соответствии с типом содержимого, определённым атрибутом enctype.
+<P class=paragraf><BR><B>ENCTYPE</B> Определяет, каким образом данные из формы 
+будут закодированы для передачи обработчику. Если значение атрибута не 
+установлено, по умолчанию предполагается 
+ENCTYPE=application/x-www-form-urlencoded. 
+<P class=paragraf>"Кнопка", чтобы запустить процесс передачи данных из формы на 
+сервер, создается с помощью тега. <BR>&nbsp;</P>
+<P class=paragraf><B>&lt;INPUT TYPE=submit&gt;&nbsp;</B><SPAN 
+lang=ru>исполнение</SPAN>==&gt;<B>&nbsp; </B><INPUT type=submit value=Submit name=B1></P>
+<P class=paragraf>Встретив такую строчку внутри формы, браузер нарисует на 
+экране кнопку с надписью Submit, при нажатии на которую все имеющиеся в форме 
+данные будут переданы обработчику, определенному в метке.</P>
+<P class=paragraf>Надпись на кнопке можно задать любую путем введения атрибута 
+VALUE="[Надпись]"например:
+<P class=paragraf>&nbsp;
+<P class=paragraf><B>&lt;INPUT TYPE=submit VALUE="Отправить!"&gt; </B><SPAN 
+lang=ru>исполнение</SPAN>==&gt;<B>&nbsp; </B><INPUT type=submit value=Отправить! name=B1>
+<P class=paragraf>Надпись, нанесенную на кнопку, можно при необходимости 
+передать обработчику путем введения в определение кнопки атрибута NAME=[имя] 
+например:
+<P class=paragraf>&nbsp;
+<P class=paragraf><B>&lt;INPUT TYPE=submit NAME=button VALUE="Отправить!"&gt; 
+</B><SPAN lang=ru>исполнение</SPAN>==&gt;<B> </B><INPUT type=submit value=Отправить! name=button>
+<P class=paragraf>При нажатии на такую кнопку обработчик вместе со всеми 
+остальными данными получит и переменную button со значением Отправить! (т.е. 
+<SPAN lang=en-us>button=</SPAN>Отправить!, это можно видеть в адресной строке).
+<P class=paragraf>В форме может быть несколько кнопок типа submit с различными 
+именами и/или значениями.<BR>Обработчик, таким образом, может действовать 
+по-разному в зависимости от того, какую именно кнопку submit нажал пользователь. 
+
+<P class=paragraf>Существуют и другие типы элементов <B>&lt;INPUT&gt;</B>. 
+Каждый элемент <B>&lt;INPUT&gt;</B> должен включать атрибут <B>NAME=[имя]</B>, 
+определяющий имя переменной, которая будет передана обработчику. Имя должно 
+задаваться только латинскими буквами. Большинство элементов <B>&lt;INPUT&gt;</B> 
+должны включать атрибут <B>VALUE="[значение]"</B>, определяющий значение, 
+которое будет передано обработчику под этим именем. 
+<P class=paragraf><B>Основные типы элементов &lt;INPUT&gt;:</B>
+<P class=paragraf><B>TYPE=text</B> 
+<P class=paragraf>Определяет окно для ввода строки текста. Может содержать 
+дополнительные атрибуты SIZE=[число] (ширина поля для ввода, в символах) и 
+MAXLENGTH=[число] (максимально допустимая длина вводимой строки в символах). 
+<BR>Пример: <BR>&lt;INPUT TYPE=text SIZE=30 NAME=<SPAN lang=en-us>student</SPAN> 
+VALUE="Вася Пупкин"&gt;&nbsp;==&gt;&nbsp; <INPUT size=30 value="Вася Пупкин" 
+name=student> 
+<P class=paragraf>Определяет ширину поля в 30 символов, для ввода текста. По 
+умолчанию в окне находится текст Вася Пупкин, который пользователь может 
+редактировать. Отредактированный (или неотредактированный) текст передается 
+обработчику в переменной <SPAN lang=en-us>student </SPAN>(<SPAN 
+lang=en-us>student</SPAN><SPAN lang=ru>=содержимое_поля)</SPAN>. <SPAN 
+lang=ru>Попробуйте отредактировать поле.</SPAN>
+<P class=paragraf><B>TYPE=password </B><BR>Определяет окно для ввода пароля. 
+Абсолютно аналогичен типу text, только вместо символов<BR>вводимого текста 
+показывает на экране звездочки (*), чтобы посторонний не мог прочесть. 
+<BR>Пример: <BR>&lt;INPUT TYPE=password NAME=p<SPAN lang=en-us>s</SPAN>w<SPAN 
+lang=en-us>d</SPAN> SIZE=20 MAXLENGTH=10&gt; ==&gt; <INPUT type=password 
+maxLength=10 name=pswd> <BR>Определяет окно шириной 20 символов для ввода 
+пароля. Максимально допустимая длина пароля — 10 символов. Введенный пароль 
+передается обработчику в переменной p<SPAN lang=en-us>s</SPAN>w<SPAN 
+lang=en-us>d</SPAN><SPAN lang=ru> (</SPAN>pswd<SPAN 
+lang=ru>=содержимое_поля)</SPAN>. <SPAN lang=ru>Попробуйте ввести информацию в 
+поле.</SPAN>
+<P class=paragraf><B>TYPE=radio </B><BR>Определяет радиокнопку. Может содержать 
+дополнительный атрибут checked (показывает, что кнопка помечена). В группе 
+радиокнопок с одинаковыми именами может быть только одна помеченная радиокнопка. 
+<BR>Пример: <BR>&lt;INPUT TYPE=radio NAME=modem VALUE="9600" checked&gt; 9600 
+бит/с ==&gt; <INPUT type=radio CHECKED value=9600 name=modem> 9600 
+бит/с<BR>&lt;INPUT TYPE=radio NAME=modem VALUE="14400"&gt; 14400 бит/с ==&gt; 
+<INPUT type=radio value=14400 name=modem> 14400 бит/с<BR>&lt;INPUT TYPE=radio 
+NAME=modem VALUE="28800"&gt; 28800 бит/с ==&gt; <INPUT type=radio value=28800 
+name=modem> 28800 бит/с <BR>Определяет группу из трех радиокнопок, подписанных 
+9600 бит/с, 14400 бит/с и 28800 бит/с. Первоначально помечена первая из кнопок. 
+Если пользователь не отметит другую кнопку, обработчику будет передана 
+переменная modem со значением 9600 (modem=9600). Если пользователь отметит <SPAN 
+lang=ru>вторую</SPAN> кнопку, обработчику будет передана переменная modem со 
+значением 14400<SPAN lang=ru> </SPAN>(modem=14400). 
+<P class=paragraf><B>TYPE=checkbox </B>
+<P class=paragraf>Определяет квадрат, в котором можно сделать пометку. Может 
+содержать дополнительный атрибут checked (показывает, что квадрат помечен). В 
+отличие от радиокнопок, в группе квадратов с одинаковыми именами может быть 
+несколько помеченных квадратов. <BR>Пример: <BR>&lt;INPUT TYPE=checkbox 
+NAME=comp VALUE="PC"&gt; Персональные компьютеры<SPAN lang=ru> 
+</SPAN>==&gt;<SPAN lang=ru> <INPUT type=checkbox value=PC name=comp> 
+Персональные компьютеры</SPAN><BR>&lt;INPUT TYPE=checkbox NAME=comp VALUE="WS" 
+checked&gt; Рабочие станции<SPAN lang=ru> </SPAN>==&gt;<SPAN lang=ru><INPUT 
+type=checkbox CHECKED value=WS name=comp> Рабочие станции</SPAN><BR>&lt;INPUT 
+TYPE=checkbox NAME=comp VALUE="LAN"&gt; Серверы локальных сетей<SPAN lang=ru> 
+</SPAN>==&gt;<SPAN lang=ru> <INPUT type=checkbox value=LAN name=comp> Серверы 
+локальных сетей</SPAN><BR>&lt;INPUT TYPE=checkbox NAME=comp VALUE="IS" 
+checked&gt; Серверы Интернет ==&gt;<SPAN lang=ru> <INPUT type=checkbox CHECKED 
+value=IS name=comp> Серверы Интернет</SPAN> 
+<P class=paragraf>Определяет группу из четырех квадратов. Первоначально помечены 
+второй и четвертый квадраты. Если пользователь не произведет изменений, 
+обработчику будут передана одна переменн<SPAN lang=ru>ая </SPAN>comp <SPAN 
+lang=ru>с двумя значениями (</SPAN>comp=WS и comp=IS<SPAN lang=ru>)</SPAN>. 
+<P class=paragraf><B>TYPE=hidden</B> 
+<P class=paragraf>Определяет скрытый элемент данных, который не виден 
+пользователю при заполнении формы и передается обработчику без изменений. Такой 
+элемент иногда полезно иметь в форме, <SPAN lang=ru>в него можно спрятать от 
+пользователя служебные данные</SPAN>. <BR>Пример: <BR>&lt;INPUT TYPE=hidden 
+NAME=id VALUE="1"&gt;<BR>Определяет скрытую переменную <SPAN 
+lang=ru>индексную</SPAN> id, которая передается обработчику со значением 1. 
+<P class=paragraf><B>TYPE=reset </B><BR>Определяет кнопку, при нажатии на 
+которую форма возвращается в исходное состояние<SPAN lang=ru> 
+(обнуляется)</SPAN>. Поскольку при использовании этой кнопки данные обработчику 
+не передаются, кнопка типа reset может и не иметь атрибута name. Пример: 
+<BR>&lt;INPUT TYPE=reset VALUE="Очистить поля формы"&gt; ==&gt;&nbsp; <INPUT type=reset value="Очистить поля формы"><BR>Определяет кнопку Очистить 
+поля формы, при нажатии на которую форма возвращается в исходное состояние. 
+<P class=paragraf>&nbsp;
+<P class=paragraf><B>Элемент &lt;SELECT&gt;:</B>
+<P class=paragraf>Меню &lt;SELECT&gt; из n элементов выглядит примерно 
+так:<BR>&lt;SELECT NAME="[имя]"&gt; <BR>&lt;OPTION VALUE="[значение 
+1]"&gt;[текст 1] <BR>&lt;OPTION VALUE="[значение 2]"&gt;[текст 2] <BR>... 
+<BR>&lt;OPTION VALUE="[значение n]"&gt;[текст n] <BR>&lt;/SELECT&gt;
+<P class=paragraf><SELECT name=[имя]> <OPTION value="[значение 1]" 
+  selected>[текст 1]<OPTION value="[значение 2]">[текст 2]<OPTION 
+  value=...>[...]<OPTION value="[значение n]">[текст n]</OPTION></SELECT>
+<P class=paragraf>Метка &lt;SELECT&gt; содержит обязательный атрибут NAME, 
+определяющий имя переменной. <BR>Метка &lt;SELECT&gt; может также содержать 
+атрибут MULTIPLE, присутствие которого показывает, что из меню можно выбрать 
+несколько элементов. Большинство браузеров показывают меню &lt;SELECT<SPAN 
+lang=ru> </SPAN>MULTIPLE&gt; в виде окна, в котором находятся элементы меню 
+(высоту окна в строках можно задать атрибутом SIZE=[число]).&nbsp; <SPAN 
+lang=ru>Для выбора нескольких значений</SPAN><SPAN lang=en-us> </SPAN><SPAN 
+lang=ru>одновременно удерживают кнопку "</SPAN><SPAN 
+lang=en-us>SHIFT</SPAN><SPAN lang=ru>" и выбирают значения мышкой.</SPAN>
+<P class=paragraf><BR>&lt;SELECT MULTIPLE SIZE=3 NAME="[имя]"&gt; <BR>&lt;OPTION 
+VALUE="[значение 1]"&gt;[текст 1] <BR>&lt;OPTION VALUE="[значение 2]"&gt;[текст 
+2] <BR>&lt;OPTION VALUE="..."&gt;[...]<BR>&lt;OPTION VALUE="[значение 
+n]"&gt;[текст n] <BR>&lt;/SELECT&gt;
+<P class=paragraf>&nbsp;
+<P class=paragraf><SELECT multiple size=3 name=[имя]> <OPTION 
+  value="[значение 1]">[текст 1]<OPTION value="[значение 2]">[текст 2]<OPTION 
+  value=...>[...]<OPTION value="[значение n]">[текст n]</OPTION></SELECT> 
+<BR><BR>Метка &lt;OPTION&gt; определяет элемент меню. Обязательный атрибут VALUE 
+устанавливает значение, которое будет передано обработчику, если выбран этот 
+элемент меню. Метка &lt;OPTION&gt; может включать атрибут selected, 
+показывающий, что данный элемент отмечен по умолчанию. <BR>Пример: 
+<BR>&lt;SELECT NAME="selection"&gt; <BR>&lt;OPTION VALUE="option1"&gt;Вариант 1 
+<BR>&lt;OPTION VALUE="option2"<SPAN lang=ru> selected</SPAN>&gt;Вариант 
+2<BR>&lt;OPTION VALUE="option3"&gt;Вариант 3 <BR>&lt;/SELECT&gt;
+<P class=paragraf><SELECT name=selection> <OPTION value=option1>Вариант 
+  1<OPTION value=option2 selected>Вариант 2<OPTION value=option3>Вариант 
+  3</OPTION></SELECT> <BR>Такой фрагмент определяет меню из трех элементов: 
+Вариант 1, Вариант 2 и Вариант 3. По умолчанию выбран элемент Вариант <SPAN 
+lang=en-us>2</SPAN>. Обработчику будет передана переменная selection<SPAN 
+lang=en-us> (</SPAN>selection<SPAN lang=en-us>=...)</SPAN> значение которой 
+может быть option1 (по умолчанию), option2 или option3.
+<P class=paragraf>&nbsp;
+<P class=paragraf><B>Элемент &lt;TEXTAREA&gt;:</B><BR><SPAN 
+lang=ru>Пример</SPAN>:<BR>&lt;TEXTAREA NAME=address ROWS=5 COLS=50&gt; <BR><SPAN 
+lang=ru>Поле для ввода большого текста, разбитого на</SPAN> <SPAN 
+lang=ru>абзацы</SPAN>.<BR>&lt;/TEXTAREA&gt;
+<P class=paragraf><TEXTAREA name=address rows=5 cols=50> 
+Поле для ввода большого текста, разбитого на абзацы.</TEXTAREA> 
+<P class=paragraf>Все атрибуты обязательны. Атрибут <B>NAME</B> определяет имя, 
+под которым содержимое окна будет передано обработчику (в примере — address). 
+Атрибут <B>ROWS</B> устанавливает высоту окна в строках (в примере — 5). Атрибут 
+<B>COLS</B> устанавливает ширину окна в символах (в примере — 50). <BR>Текст, 
+размещенный между метками &lt;TEXTAREA&gt; и &lt;/TEXTAREA&gt;, представляет 
+собой содержимое окна по умолчанию. Пользователь может его отредактировать или 
+просто стереть. <BR><BR><BR>&nbsp;
+<P class=head><SPAN lang=ru>Практическое задание</SPAN>
+<OL>
+  <LI>
+  <P class=paragraf>Создайте новую страницу. Составьте форму<SPAN 
+  lang=en-us>-</SPAN>анкету (используя методом <B><SPAN 
+  lang=en-us>GET</SPAN></B>), включающую в себя следующие поля<SPAN lang=ru> 
+  (<B>все переменные должны быть читаемы </B></SPAN><B>: <SPAN 
+  lang=ru>русский язык </SPAN>- langru<SPAN lang=ru>, а не </SPAN>C1 <SPAN 
+  lang=ru>или </SPAN>T2<SPAN lang=ru>, по умолчанию в значениях должны быть ваши 
+  данные</SPAN></B><SPAN 
+  lang=ru>)</SPAN>:<BR>Фамилия<BR>Имя<BR>Отчество<BR><SPAN 
+  lang=en-us>E-mail</SPAN><BR>Выбор страны (обязательно выпадающим 
+  <B>SELECT</B>, стран не менее 10-ти)<BR>Выбор языка (обязательно 
+  с помощью <B>checkbox</B>, не менее 5-ти языков)<BR>Выбор профессий (обязательно с 
+  помощью <B>SELECT MULTIPLE</B>, не менее 5-ти профессий)<BR>Пароль<BR>Дополнительная информация (обязательно с помощью 
+  <B>TEXTAREA</B>)<BR>Кнопка для 
+  загрузки информации на сервер<BR>Кнопка для очистки формы<BR><BR><B>Данные из 
+  формы должны посылаться обработчику на сервер<SPAN lang=ru> по </SPAN>URL 
+  -<BR>&nbsp;&nbsp;&nbsp; <SPAN lang=en-us>http://atpp.vstu.edu.ru/cgi-bin/checkform.pl</SPAN>.</B> </P>
+  <BR>
+  <LI>
+  <P class=paragraf>Проверьте работоспособность формы. </P>
+  <LI>
+  <P class=paragraf>В исходнике страницы укажите, в виде комментариев, для чего 
+  предназначены используемые для форм&nbsp; теги и их свойств<SPAN 
+  lang=ru>а</SPAN> (<SPAN lang=ru>атрибуты</SPAN>). </P>
+</OL>
+<P><I><B>К сдаче лабораторной предоставляются:</B> работающие страницы 
+с комментариями тегов и их свойств в исходнике.</I>
+<P>&nbsp;</P></DIV>
+<DIV class=botom>
+<HR width="80%">
+</DIV></DIV></BODY></HTML>

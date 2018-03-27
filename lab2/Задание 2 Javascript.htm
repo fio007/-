@@ -1,0 +1,280 @@
+<HTML><HEAD><TITLE>Лабораторная работа 2</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+<LINK href="main.css" type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript>
+<!--
+
+function CheckForm(UserForm)
+{
+    var is_ok = true;
+
+    if (UserForm.name.value == '')
+    {
+    is_ok = false;
+    alert("Введите ваше имя!!");
+    UserForm.name.focus();
+    }
+    if (UserForm.Comment.value == '')
+    {
+    is_ok = false;
+    alert("Введите ваши коммениарии!");
+    UserForm.Comment.focus();
+    }
+    if (UserForm.email.value == '')
+    {
+    is_ok = false;
+    alert("Введите ваш e-mail!");
+    UserForm.email.focus();
+}
+
+return is_ok;
+} 
+// -->
+</SCRIPT>
+
+<META http-equiv=Content-Language content=ru>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY topMargin=0>
+<DIV class=body>
+<DIV class=main2>
+<P class=headlab>Лабораторная работа 2</P>
+<P class=head><SPAN lang=ru>Проверка правильности заполнения форм с помощью 
+</SPAN>JavaScript.<SPAN lang=ru> Окна диалога.</SPAN><BR>&nbsp;</P>
+<P class=target><B>Цель работы:</B> формирование умений использования <SPAN 
+lang=en-us>JavaScript </SPAN><SPAN lang=ru>для проверки правильности заполнения 
+форм и создания окон диалога.</SPAN></P>
+<P class=head>Поясняющая информация </P>
+<P class=head2><SPAN lang=ru><B>Объектная модель браузера</B> </SPAN></P>
+<P class=paragraf><SPAN lang=ru>Объектная модель браузера содержит 12 
+объектов</SPAN>:</P>
+<OL>
+  <LI>
+  <P class=paragraf>Document - <SPAN lang=ru>предоставляющий возможность доступа 
+  к компонентам документа </SPAN>HTML.</P>
+  <LI>
+  <P class=paragraf>Event<SPAN lang=ru> - предоставляющий возможность доступа к 
+  свойствам событий, когда последние происходят.</SPAN></P>
+  <LI>
+  <P class=paragraf>History<SPAN lang=ru> - предоставляет информацию об адресах, 
+  которые клиент посетил.</SPAN></P>
+  <LI>
+  <P class=paragraf>Location<SPAN lang=ru> - предоставляет информацию об адресе 
+  текущего документа.</SPAN></P>
+  <LI>
+  <P class=paragraf>MimeType<SPAN lang=ru> - предоставляет информацию о типе 
+  </SPAN>MIME.</P>
+  <LI>
+  <P class=paragraf>Navigator - <SPAN lang=ru>позволяет обращаться к свойствам 
+  браузера.</SPAN></P>
+  <LI>
+  <P class=paragraf>Selection<SPAN lang=ru> - отображает текущее выделение 
+  документа.</SPAN></P>
+  <LI>
+  <P class=paragraf>Style<SPAN lang=ru> - представляет конкретный элемент стиля 
+  в таблице стилей.</SPAN></P>
+  <LI>
+  <P class=paragraf>TextRange<SPAN lang=ru> - отображает разделы текста, 
+  формирующего документ </SPAN>HTML.</P>
+  <LI>
+  <P class=paragraf>Screen - <SPAN lang=ru>предоставляет информацию о мониторе и 
+  системе вывода, информации клиента.</SPAN></P>
+  <LI>
+  <P class=paragraf>Window<SPAN lang=ru> - предоставляет свойства, методы и 
+  события, связанные с окном браузера.</SPAN></P>
+  <LI>
+  <P class=paragraf>StyleSheet<SPAN lang=ru> - представляет все элементы стиля 
+  внутри таблицы стилей.</SPAN></P></LI></OL>
+<P class=paragraf><SPAN lang=ru>которые позволяют обращаться к части браузера 
+или части страницы с помощью языка </SPAN>JavaScript.</P>
+<P class=paragraf><SPAN lang=ru>Кроме объектов в объектной модели вводятся 
+следующие понятия</SPAN>:</P>
+<P class=paragraf><SPAN lang=ru><B>Методы</B> - способы работы с объектами. 
+Например</SPAN>:<SPAN lang=ru> закрыть окно. По сути это функция, 
+ассоциированная с объектом.</SPAN></P>
+<P class=paragraf><SPAN lang=ru>object.methodname </SPAN></P>
+<P class=paragraf><SPAN lang=ru><B>События - </B>объект сообщает нам, что нечто 
+произошло. Например</SPAN>: <SPAN lang=ru>элемент становиться 
+активным</SPAN>.</P>
+<P class=paragraf><SPAN lang=ru><B>Свойства -</B> свойства объекта. 
+Например</SPAN>: <SPAN lang=ru>имя и размеры окна.</SPAN></P>
+<P class=head2><B><SPAN lang=ru>Окна диалога. Объект </SPAN>Window</B></P>
+<P class=paragraf><B>Открытие окна</B></P>
+<P class=paragraf><SPAN lang=ru>Синтаксис</SPAN><SPAN lang=en-us>:</SPAN></P>
+<P class=paragraf>window.open ("<SPAN lang=en-us>URL </SPAN><SPAN lang=ru>или 
+</SPAN><SPAN lang=en-us>URI</SPAN>","<SPAN lang=ru>имя окна</SPAN>","<SPAN 
+lang=ru>свойства окна</SPAN>")</P>
+<P class=paragraf>Следующий оператор создаёт окно, которое отображает содержимое 
+<SPAN lang=ru>страницы</SPAN> http://atpp.vstu.edu.ru:</P>
+<P class=paragraf>window.open("http://atpp.vstu.edu.ru") </P>
+<P class=paragraf>При создании окна <SPAN lang=ru>в</SPAN>ы можете также 
+предоставить имя, в данном случае - <SPAN lang=en-us>atpp</SPAN>Window, для 
+обращения к окну как к цели/target при отправке формы или при переходе по 
+гиперссылке.</P>
+<P class=paragraf>window.open("http://atpp.vstu.edu.ru"<SPAN lang=en-us>, 
+"atpp</SPAN>Window<SPAN lang=en-us>" </SPAN>) </P>
+<P class=paragraf>Имя окна не требуется при создании окна. Но окно обязано иметь 
+имя, если <SPAN lang=ru>в</SPAN>ы хотите обратиться к нему из другого окна. </P>
+<P class=paragraf>При открытии окна <SPAN lang=ru>в</SPAN>ы можете 
+специфицировать атрибуты, такие как высота/height и ширина/width, панель 
+утилит/toolbar, адресная строка/location field или полосы прокрутки/scrollbars. 
+Следующий оператор создаёт окно без панели утилит, но с полосами прокрутки:</P>
+<P class=paragraf>window.open ("http://atpp.vstu.edu.ru","<SPAN 
+lang=en-us>atpp</SPAN>Window","toolbar=no,scrollbars=yes")</P>
+<P class=paragraf>Некоторые свойства окна<SPAN lang=en-us>:</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>directories - Если yes, создаются стандартные 
+кнопки директорий браузера, такие как What's New и What's Cool.</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>height - Специфицирует высоту окна в 
+пикселах.</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>innerHeight - Специфицирует высоту области 
+содержимого окна в пикселах. Это свойство заменило height, которое оставлено для 
+обеспечения обратной совместимости. </SPAN></P>
+<P class=paragraf><SPAN lang=en-us>innerWidth - Специфицирует ширину области 
+содержимого окна в пикселах. Это свойство заменило width, которое оставлено для 
+обеспечения обратной совместимости. </SPAN></P>
+<P class=paragraf><SPAN lang=en-us>location - Если yes, создаёт поле ввода 
+Location.</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>menubar - Если yes, создаёт строку меню в 
+верхней части окна.</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>outerHeight - Специфицирует размер по 
+вертикали в пикселах внешней границы окна. </SPAN></P>
+<P class=paragraf><SPAN lang=en-us>resizable - Если yes, даёт пользователю 
+возможность изменять размеры окна.</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>screenX - Специфицирует расстояние, на 
+котором новое окно помещается от левого края экрана. </SPAN></P>
+<P class=paragraf><SPAN lang=en-us>screenY - Специфицирует расстояние, на 
+котором новое окно помещается от верха экрана. </SPAN></P>
+<P class=paragraf><SPAN lang=en-us>scrollbars - Если yes, создаются вертикальная 
+и горизонтальная полосы прокрутки, если </SPAN><SPAN lang=ru>д</SPAN><SPAN 
+lang=en-us>окумент становится больше размеров окна.</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>status - Если yes, создаётся статусная строка 
+внизу окна.</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>titlebar - Если yes, создаётся окно со 
+строкой заголовка. </SPAN></P>
+<P class=paragraf><SPAN lang=en-us>toolbar - Если yes, создаётся стандартная 
+панель браузера с кнопками, такими как Back и Forward.</SPAN></P>
+<P class=paragraf><SPAN lang=en-us>width - Специфицирует ширину окна в 
+пикселах.<BR>&nbsp;</SPAN></P>
+<P class=paragraf><SPAN lang=ru>Для того чтобы функция отрабатывалась при 
+нажатии мышкой на элементе документа, будем использовать событие </SPAN><SPAN 
+lang=en-us><B>onClick</B> </SPAN><SPAN lang=ru>объекта </SPAN>Document<SPAN 
+lang=en-us>.</SPAN></P>
+<P class=paragraf><B><SPAN lang=ru>Пример</SPAN><SPAN 
+lang=en-us>:</SPAN></B></P>
+<P class=paragraf><SPAN lang=ru>Откроем ссылку в новом окне </SPAN></P>
+<P class=paragraf>&lt;a href=""<SPAN lang=en-us> </SPAN></P>
+<P class=paragraf><SPAN lang=en-us>on</SPAN>C<SPAN 
+lang=en-us>lick</SPAN>="window.open('http://atpp.vstu.edu.ru','<SPAN 
+lang=en-us>atpp</SPAN>Window','<SPAN 
+lang=en-us>left=300,top=300,</SPAN>width=500,height=200,toolbar=no,menubar=no,location=no,directories=no')"&gt;</P>
+<P class=paragraf>Открыть новое окно</P>
+<P class=paragraf>&lt;/a&gt;</P>
+<P class=paragraf><SPAN lang=ru>Исполнение</SPAN><SPAN lang=en-us>: </SPAN><A 
+onclick="window.open('http://atpp.vstu.edu.ru','atppWindow','left=300,top=300,width=500,height=200,toolbar=no,menubar=no,location=no,directories=no')" 
+href="http://atpp.vstu.edu.ru">Открыть новое окно</A></P>
+<P class=paragraf><SPAN lang=ru>Тоже самое можно сделать с помощью 
+кнопки</SPAN><SPAN lang=en-us>:</SPAN></P>
+<P class=paragraf>&lt;input type="button" value="Открыть новое окно"</P>
+<P 
+class=paragraf>onClick="window.open('http://atpp.vstu.edu.ru','atppWindow','left=300,top=300,width=500,height=200,toolbar=no,menubar=no,location=no,directories=no')"&gt;</P>
+<P class=paragraf><SPAN lang=ru>Исполнение</SPAN><SPAN lang=en-us>: </SPAN></P>
+<P class=paragraf><INPUT onclick="window.open('http://atpp.vstu.edu.ru','atppWindow','left=300,top=300,width=500,height=200,toolbar=no,menubar=no,location=no,directories=no')" type=button value="Открыть новое окно"></P>
+<P class=paragraf>&nbsp;</P>
+<P class=paragraf><B>Закрытие окна</B></P>
+<P class=paragraf><SPAN lang=ru>С</SPAN>ледующи<SPAN lang=ru>й</SPAN> оператор 
+закрывает текущее окно:<BR><BR>window.close()</P>
+<P class=paragraf><SPAN lang=ru>Пример</SPAN><SPAN lang=en-us>:</SPAN></P>
+<FORM action="" method=post>
+<P class=paragraf><INPUT onclick=window.close() type=button value="Закрыть данное окно"></P></FORM>
+<P class=head2>&nbsp;</P>
+<P class=head2><B><SPAN lang=ru>Проверка правильности заполнения форм с помощью 
+</SPAN>JavaScript.</B></P>
+<P class=paragraf><SPAN lang=ru>С помощью </SPAN><SPAN lang=en-us>JavaScript 
+</SPAN><SPAN lang=ru>можно контролировать правильность заполнения 
+форм.</SPAN></P>
+<P class=paragraf><SPAN lang=ru>Попробуйте нажать на "Отправить" в форме 
+расположенной ниже, не заполняя ее.</SPAN></P>
+<P class=paragraf>&nbsp;
+<FORM onsubmit="return CheckForm(this)">
+<TABLE height=138>
+  <TBODY>
+  <TR>
+    <TD height=22><SPAN lang=ru>Имя</SPAN></TD>
+    <TD height=22><INPUT name=name></TD></TR>
+  <TR>
+    <TD height=22>E-mail</TD>
+    <TD height=22><INPUT name=email></TD></TR>
+  <TR>
+    <TD height=52><SPAN lang=ru>Коментарий</SPAN></TD>
+    <TD height=52><TEXTAREA name=Comment rows=3></TEXTAREA></TD></TR>
+  <TR>
+    <TD height=26><INPUT type=submit value=Отправить></TD>
+    <TD 
+height=26><INPUT type=reset value=Сброс></TD></TR></TBODY></TABLE></FORM></P>
+<P class=paragraf>&nbsp;</P>
+<P class=paragraf><B>Функции для этого примера<SPAN lang=en-us>:</SPAN></B></P>
+<P class=paragraf><BR>&lt;script 
+language="JavaScript"&gt;<BR>&lt;!--<BR><BR>function 
+CheckForm(UserForm)<BR>{<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>var is_ok 
+= true;<BR><BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>if (UserForm.<SPAN 
+lang=en-us>name</SPAN>.value == '')<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; 
+</SPAN>{<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>is_ok = false;<BR><SPAN 
+lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>alert("Введите ваше имя!!");<BR><SPAN 
+lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>UserForm.<SPAN 
+lang=en-us>name</SPAN>.focus();<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; 
+</SPAN>}<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>if 
+(UserForm.Comment.value == '')<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; 
+</SPAN>{<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>is_ok = false;<BR><SPAN 
+lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>alert("Введите ваши 
+коммениарии!");<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; 
+</SPAN>UserForm.Comment.focus();<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; 
+</SPAN>}<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>if (UserForm.email.value 
+== '')<BR><SPAN lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>{<BR><SPAN 
+lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>is_ok = false;<BR><SPAN 
+lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>alert("Введите ваш e-mail!");<BR><SPAN 
+lang=en-us>&nbsp;&nbsp;&nbsp; </SPAN>UserForm.email.focus();<BR>}<BR><BR>return 
+is_ok;<BR>} <BR>// --&gt;<BR>&lt;/script&gt;</P>
+<P class=paragraf>&nbsp;</P>
+<P class=paragraf><B>Вызов функции в теге <SPAN lang=en-us>&lt;FORM&gt; 
+</SPAN>при нажатии на кнопку "Отправить"</B></P>
+<P class=paragraf><BR>&lt;form onSubmit = "return CheckForm(this)"&gt;</P>
+<P class=paragraf>&nbsp;</P>
+<P class=paragraf><B>Имена полей </B></P>
+<P class=paragraf><BR>&lt;input type="text" name="name" 
+size="20"&gt;<BR>&lt;input type="text" name="email"&nbsp; 
+size="20"&gt;<BR>&lt;textarea rows="3" name="Comment" cols="20"&gt;</P>
+<P class=paragraf>&nbsp;</P>
+<P class=paragraf>&nbsp;</P>
+<P class=paragraf>&nbsp;</P>
+<P class=head><SPAN lang=ru>Практические задания</SPAN></P>
+<P class=head2><B>Задание 1</B></P>
+<OL>
+  <LI>
+  <P class=paragraf>Сделайте так, чтобы форма-анкета предыдущего задания 
+  открывалась в новом диалоговом окне. <BR>Для этого создайте главную страницу,
+  на которой будет ссылка на анкету. При открытии анкеты нужно задать<SPAN 
+  lang=en-us>:<BR>- </SPAN>отступ слева<BR>- отступ с верху<BR>- ширину<BR>- 
+  высоту<BR>- не отображение панели инструментов<BR>- не отображение панели 
+  меню<BR>- отображение строки состояния<BR>- не отображение адресной 
+  строки<BR>- не отображение кнопок браузера<BR>- не отображение <SPAN 
+  lang=en-us>полос прокрутки</SPAN></P>
+  <LI>
+  <P class=paragraf><SPAN lang=ru>Проверьте работоспособность страниц.
+  </SPAN></P></LI></OL>
+<P class=head2><B>Задание <SPAN lang=ru>2</SPAN></B></P>
+<OL>
+  <LI>
+  <P class=paragraf><SPAN lang=ru>Сделайте проверку правильности
+  заполнения формы-анкеты.<BR>
+  Для этого необходимо проверить, что<BR>
+  - все поля формы заполнены<BR>
+  - в поле E-mail введен допустимый электронный адрес<BR>
+  - длина пароля не менее 5 символов.
+  </SPAN></P>
+  <LI>
+  <P class=paragraf><SPAN lang=ru>Проверьте работоспособность формы.</SPAN></P></LI></OL>
+<P><I><B>К сдаче лабораторной предоставляются:</B> работающие страницы 
+с комментариями в исходнике.</I></P>
+<P>&nbsp;</P></DIV>
+<DIV class=botom>
+<HR width="80%">
+</DIV></DIV></BODY></HTML>

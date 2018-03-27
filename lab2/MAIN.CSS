@@ -1,0 +1,60 @@
+BODY {
+	MARGIN-TOP: 0px; FONT-SIZE: 10pt; FONT-FAMILY: 'arial', sans-serif; BACKGROUND-COLOR: #ffffff
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.body {
+	LEFT: 10%; PADDING-BOTTOM: 5%; WIDTH: 750px; POSITION: absolute
+}
+.top {
+	BORDER-RIGHT: #ffffff 5px solid; BORDER-TOP: #ffffff 5px solid; BORDER-LEFT: #ffffff 5px solid; WIDTH: 750px; BORDER-BOTTOM: #ffffff 5px solid; HEIGHT: 60px
+}
+.top2 {
+	BORDER-RIGHT: #ffffff 5px solid; BORDER-TOP: #ffffff 5px solid; FONT-WEIGHT: bold; BACKGROUND: #f7f4f2; BORDER-LEFT: #ffffff 5px solid; WIDTH: 750px; COLOR: #94584e; BORDER-BOTTOM: #ffffff 5px solid; TOP: 300px; HEIGHT: 20px
+}
+.main {
+	BORDER-RIGHT: #ffffff 5px solid; BORDER-TOP: #ffffff 5px solid; RIGHT: 105px; LEFT: 155px; FLOAT: left; OVERFLOW: auto; BORDER-LEFT: #ffffff 5px solid; WIDTH: 435px; BORDER-BOTTOM: #ffffff 5px solid; POSITION: absolute; TOP: 100px; HEIGHT: 570px
+}
+.main2 {
+	BORDER-RIGHT: #ffffff 5px solid; BORDER-TOP: #ffffff 5px solid; BORDER-LEFT: #ffffff 5px solid; WIDTH: 750px; BORDER-BOTTOM: #ffffff 5px solid; TOP: 175px; HEIGHT: 600px
+}
+.left {
+	BORDER-RIGHT: #ffffff 5px solid; BORDER-TOP: #ffffff 5px solid; BACKGROUND: #f7f4f2; FLOAT: left; BORDER-LEFT: #ffffff 5px solid; WIDTH: 160px; BORDER-BOTTOM: #ffffff 5px solid; TOP: 175px; HEIGHT: 600px
+}
+.right {
+	BORDER-RIGHT: #ffffff 5px solid; BORDER-TOP: #ffffff 5px solid; BACKGROUND: #f7f4f2; LEFT: 590px; FLOAT: right; BORDER-LEFT: #ffffff 5px solid; WIDTH: 160px; BORDER-BOTTOM: #ffffff 5px solid; POSITION: absolute; TOP: 85px; HEIGHT: 600px
+}
+.botom {
+	BORDER-RIGHT: #ffffff 5px solid; BORDER-TOP: #ffffff 5px solid; BORDER-LEFT: #ffffff 5px solid; WIDTH: 750px; BORDER-BOTTOM: #ffffff 5px solid; HEIGHT: 60px
+}
+.paragraf {
+	MARGIN: 5px 15px 5px 10px; TEXT-INDENT: 30px; TEXT-ALIGN: justify
+}
+.paragraf2 {
+	TEXT-ALIGN: justify
+}
+.target {
+	MARGIN: 5px 15px 5px 10px; FONT-STYLE: italic; TEXT-ALIGN: center
+}
+.cancel {
+	MARGIN: 5px 15px 5px 10px; FONT-STYLE: italic
+}
+.head {
+	FONT-SIZE: 15pt; TEXT-ALIGN: center
+}
+.headlab {
+	FONT-SIZE: 13pt; TEXT-ALIGN: center
+}
+.head2 {
+	FONT-SIZE: 13pt
+}
