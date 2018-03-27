@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+   	<head>
+      	<title>HTML Document</title>
+		<style>
+		   	ol.rom {
+		    	list-style-type: upper-roman; /* Заглавные римские числа */
+		   	}
+	  	</style>
+   	</head>
+   	<body>
+	   	<p>
+	   		Вставка списков внутрь ячеек таблицы позваоляет 
+			<br/>
+			олее гибко управлять их размещением настранице.
+	   	</p>
+	   	<div>
+	   		<table border="1" cellspacing="0">
+				<tr>
+					<td>
+						<ul>
+							<li>Ivanov</li>
+							<li>Petrov</li>
+							<li>Sidorov</li>
+						</ul>
+					</td>
+					<td>
+						<ol class="rom" start=5>
+							<li><img src="./src/CHEM16.BMP" align="center"/>Ivanov</li>
+							<li><img src="./src/CHEM16.BMP" align="center"/>Petrov</li>
+							<li><img src="./src/CHEM16.BMP" align="center"/>Sidorov</li>
+						</ol>
+					</td>
+				</tr>
+			</table>
+	   	</div>
+		<p>3. Многоуровневый список</p>
+		<div>
+			<ol>
+				<li>Gl1
+					<ul>
+						<li>Ivanov</li>
+						<li>Petrov</li>
+						<li>Sidorov</li>
+					</ul>
+				</li>
+				<li>Gl2
+					<ul>
+						<li>Ivanov</li>
+						<li>Petrov</li>
+						<li>Sidorov</li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+   	</body>
+</html>
