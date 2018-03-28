@@ -1,0 +1,23 @@
+<html>                                                                  
+<head>      
+<style type="text/css">
+p
+{
+border:1px solid;
+}
+</style>                                                          
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("p").mouseover(function(){ $("p").css("color","green");});
+   $("p").mouseout(function(){ $("p").css("color","black");});
+
+});                                           
+</script>
+                                                          
+</head>
+<body> 
+<p>Наведите на меня курсор мыши и я изменю цвет. Когда Вы выведите курсор мыши за мои пределы я изменю цвет на стандартный.</p>
+</body>
+</html>

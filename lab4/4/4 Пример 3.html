@@ -1,0 +1,27 @@
+<html>                                                                  
+<head>                                                            
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#but1").click(function(){
+      alert($("#anchor1").attr("href"));
+   });
+   $("#but2").click(function(){
+      $("#anchor1").attr("href","http://www.jquery.com/");
+   });
+   $("#but3").click(function(){
+      $("#anchor1").removeAttr("href");
+   });
+
+});                                           
+</script>                                                          
+</head>
+<body> 
+<a id="anchor1" href="http://www.jquery.com/">jquery.com</a>
+<br /><br />
+<input id="but1" type="button" value="Узнать содержимое атрибута href" />
+<input id="but2" type="button" value="Изменить содержимое атрибута href" />
+<input id="but3" type="button" value="Удалить атрибут href" />
+</body>
+</html>

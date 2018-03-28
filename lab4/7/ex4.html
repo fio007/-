@@ -1,0 +1,42 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<style type="text/css">
+#drag1
+{
+padding:15px;
+border-style:solid;
+border-width:1px;
+width:200px;
+height:120px;
+}
+#drag2
+{
+padding:15px;
+border-style:solid;
+border-width:1px;
+width:200px;
+height:120px;
+}
+.ui-draggable-dragging
+{
+background-color:#ecbfda;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+  
+   $("#drag1").draggable({helper:"clone"});
+   $("#drag2").draggable({helper:function(event){return $("<div>Я элемент помощник.</div>")}});
+
+});
+</script>
+</head>
+<body>
+<div id="drag1" class="ui-widget ui-corner-all">Во время перетаскивания вместо меня будет отображен помощник двойник. </div>
+<br />
+<div id="drag2" class="ui-widget ui-corner-all">Во время перетаскивания вместо меня будет отображен элемент помощник.</div>
+</body>
+</html>

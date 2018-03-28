@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="WINDOWS-1251" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='faculty.xsl'?>
+<faculty name="Электро-энергетический факультет">
+ <dean>Бабарушкин В.А.</dean>
+ <address>
+  <city>г. Вологда</city>
+  <street>ул. Галкинская</street>
+  <appt>д. 3</appt>
+ </address>
+ <phone>72-50-42</phone>
+ <groups>
+  <group name="ЭМ-11">
+   <student>
+    <fullname>Иванов Иван</fullname>
+    <age>18</age>
+    <avg_mark>4.5</avg_mark>
+   </student>
+   <student>
+    <fullname>Петров Петр</fullname>
+    <age>17</age>
+    <avg_mark>4</avg_mark>
+   </student>
+  </group>
+  <group name="ЭМ-12">
+   <student>
+    <fullname>Пупкин Василий</fullname>
+    <age>19</age>
+    <avg_mark>5</avg_mark>
+   </student>
+   <student>
+    <fullname>Сидоров Николай</fullname>
+    <age>18</age>
+    <avg_mark>3</avg_mark>
+   </student>
+  </group>
+ </groups>
+</faculty>

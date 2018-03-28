@@ -1,0 +1,27 @@
+<html>                                                                  
+<head>                                                                
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+</script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#el1").focus(function(){ 
+      $(this).attr("value","");
+      $(this).css("color","black");
+   });
+   $("#el1").blur(function(){ 
+      $(this).attr("value","Введите ФИО");
+      $(this).css("color","grey");
+   });
+   $("#el2").change(function(){ alert("Содержимое данного элемента было изменено.") });
+
+});                                           
+</script>                                                          
+</head>
+<body> 
+<p>1. Когда Вы установите курсор в поле ниже надпись "Введите ФИО" исчезнет, когда Вы щелкните за пределами поля надпись снова будет отображена.</p>
+<input id="el1" type="text" style="color:grey;" value="Введите ФИО" />
+<p>2. Измените содержимое элемента ниже и щелкните за его пределами.</p>
+<input id="el2" type="text" value="Измените меня" /> 
+</body>
+</html>

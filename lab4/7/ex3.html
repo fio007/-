@@ -1,0 +1,35 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<style type="text/css">
+.ui-draggable
+{
+padding:15px;
+border-style:solid;
+border-width:1px;
+width:130px;
+height:65px;
+}
+.ui-draggable-dragging
+{
+background-color:#ecbfda;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+  
+   $("#drag1").draggable({cursor:"move"});
+   $("#drag2").draggable({cursor:"help"});
+
+});
+</script>
+</head>
+<body>
+<p>Во время перетаскивания первого элемента курсор мыши примет форму сжатой руки, а во время перетаскивания второго вопросительного знака.</p>
+<div id="drag1" class="ui-widget ui-corner-all">Попробуйте перетащить меня. </div>
+<br /><br />
+<div id="drag2" class="ui-widget ui-corner-all">Попробуйте перетащить меня. </div>
+</body>
+</html>

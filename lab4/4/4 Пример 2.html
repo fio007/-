@@ -1,0 +1,27 @@
+<html>                                                                  
+<head>                                                                
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#but1").click(function(){
+      $("#par1").prepend("<b>jQuery</b> - это  ");
+   });
+   $("#but2").click(function(){
+      $("#par1").append(" значительно упрощающая написание кода.");
+   });
+   $("#but3").click(function(){
+      $("body").append("<p>Я добавленный абзац.</p>");
+   });
+
+});                                           
+</script>                                                          
+</head>
+<body> 
+<p id="par1">JavaScript библиотека </p>
+<input id="but1" type="button" value="Добавить содержимое перед текстом" />
+<input id="but2" type="button" value="Добавить содержимое после текста" />
+<br /><br />
+<input id="but3" type="button" value="Добавить новый абзац в конце документа" />
+</body>
+</html>

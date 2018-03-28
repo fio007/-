@@ -1,0 +1,19 @@
+<html>                                                                  
+<head>                                                                
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+</script>
+<script type="text/javascript">   
+function start()
+{
+//Скроем абзац с id="hid" с помощью jQuery 
+   $("p#hid").hide();
+//Изменим содержимое абзаца с id="change"
+   document.getElementById("change").innerHTML="Данное содержимое было изменено с помощью JavaScript.";       
+}                                                      
+</script>                                                        
+</head>                                                                 
+<body onload="start()">                                                               
+<p id="hid">Я абзац содержимое которого будет скрыто.</p> 
+<p id="change">Я абзац содержимое которого будет изменено. </p>                                     
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>                                                                  
+<head>                                                                
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#but1").click(function(){alert("Вы нажали один раз на первую кнопку!");});
+   $("#but2").dblclick(function(){alert("Вы нажали два раза на вторую кнопку!");});
+
+});                                           
+</script>                                                          
+</head>
+<body> 
+<p>Щелкните на кнопку ниже, чтобы вызвать всплывающее окно.</p>
+<input type="button" id="but1" value="Нажмите на меня" />
+<p>Щелкните на кнопку ниже два раза, чтобы вызвать всплывающее окно.</p>
+<input type="button" id="but2" value="Нажмите на меня" />
+</body>
+</html>

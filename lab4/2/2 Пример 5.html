@@ -1,0 +1,38 @@
+<html>
+<head>  
+<style type="text/css">
+#square
+{
+border:1px solid;
+width:250px;
+height:250px;
+font-size:30px;
+padding-left:30px;
+padding-top:100px;
+float:left;
+margin-right:15px;
+}
+#coord
+{
+font-size:1.2em;
+text-align:center;
+}
+</style>                                                              
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+  
+   $("#square").click(function(event){
+      $("#coord").css("display","block");
+      $("#x").html(event.pageX);
+      $("#y").html(event.pageY);
+   });
+
+});                                           
+</script> 
+</head>
+<body>
+<div id="square">Щелкните где-нибудь в данном поле.</div>
+<div id="coord" style="display:none">Курсор мыши во время того как, произошло событие находился на следующих координатах:<br /><br /> <b>X:<span id="x"></span> Y:<span id="y"> </span></b> </div>
+</body>
+</html>

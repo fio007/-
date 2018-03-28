@@ -1,0 +1,32 @@
+<html>                                                                  
+<head>                                                                
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#but1").click(function(){
+      $("#par1").html("<b>jQuery</b> - это JavaScript библиотека значительно упрощающая написание кода.");
+   });
+   $("#but2").click(function(){
+      $("#par2").html("jQuery значительно облегчает взаимодействие с DOM.");
+   });
+   $("#but3").click(function(){
+      alert($("#par1").html());
+   });
+   $("#but4").click(function(){
+      alert($("#par2").html());
+   });
+
+});                                           
+</script>                                                          
+</head>
+<body> 
+<p id="par1">Я первый абзац. </p>
+<p id="par2">Я второй абзац. </p> 
+<input id="but1" type="button" value="Изменить текст первого абзаца" />
+<input id="but2" type="button" value="Изменить текст второго абзаца" />
+<br /><br />
+<input id="but3" type="button" value="Узнать текст первого абзаца" />
+<input id="but4" type="button" value="Узнать текст второго абзаца" />
+</body>
+</html>

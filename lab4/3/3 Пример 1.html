@@ -1,0 +1,28 @@
+<html>                                                                  
+<head>                                                                
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+   
+   $("#but1").click(function(){ $("#par1").fadeOut(3000)});
+   $("#but2").click(function(){ $("#par1").fadeIn(3000)});
+   $("#but3").click(function(){ $("#par1").fadeTo(3000,0.3)});
+   $("#but4").click(function(){ $("#par1").fadeTo(3000,0.8)});
+   $("#but5").click(function(){ $("#par1").fadeOut(3000,function(){
+      alert("Абзац был полностью скрыт.");
+   });
+   });
+
+});                                           
+</script>                                                          
+</head>
+<body> 
+<p id="par1" style="font-size:20px;">Я абзац к которому будут применяться различные эффекты.</p>
+<input id="but1" type="button" value="Постепенное скрытие" />
+<input id="but2" type="button" value="Постепенное появление" />
+<input id="but3" type="button" value="Постепенное скрытие до уровня прозрачности 0.3" />
+<br /><br />
+<input id="but4" type="button" value="Постепенное появление до уровня прозрачности 0.8" />
+<input id="but5" type="button" value="Вывод всплывающего окна после применения эффекта к абзацу" />
+</body>
+</html>

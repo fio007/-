@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="WINDOWS-1251" standalone="no"?>
+<?xml-stylesheet type='text/xsl' href='books.xsl'?>
+<books>
+  <book id="1">
+    <title>XML: Справочник</title>
+    <author>Эдди С.</author>
+    <price>15</price>
+  </book>
+  <book id="2">
+    <title>CGI-программирование</title>
+    <author>Павлов А.</author>
+    <price>10</price>
+  </book>
+  <book id="3">
+    <title>JavaScript: Справочник</title>
+    <author>Дарнелл Р.</author>
+    <price>12</price>
+  </book>
+</books>

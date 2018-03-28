@@ -1,0 +1,17 @@
+<html>                                                                  
+<head>                                                                
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+</script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#but1").one("click",function(){alert("Вы нажали на кнопку с id=but1")});
+
+});                                           
+</script>                                                     
+</head>
+<body> 
+<p>При нажатии на кнопку ниже будет выведено всплывающее окно. При повторном нажатии ничего не произойдет.</p>
+<input id="but1" type="button" value="Нажмите на меня" />
+</body>
+</html>

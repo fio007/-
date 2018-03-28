@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#cicrle {
+			position: absolute;
+			border-radius: 100%;
+			background-color: green;
+			width: 200px;
+			height: 200px;
+			top: 50px;
+			left: 200px;
+		}
+	</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script> 
+		$(document).ready(function(){
+			$("#but1").click(function(){ 
+				$("#cicrle").css("background-color", "red").animate({'height': "50px", "width": "50px", "top": "50%", "left": "50%"}, 2000).fadeTo(2000, 0.5);
+				$("#cicrle").animate({top: 50, left: 50}, 2000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="but1">аааааааа</button>
+	<div id="cicrle" class="initial"></div>
+
+</body>
+</html>

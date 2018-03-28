@@ -1,0 +1,30 @@
+<html>                                                                  
+<head>                                                                
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+</script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#but1").click(function(){
+      $("#par1").css("color","black");
+      $("#par1").css("font-size","1em");
+   });
+   $("#par1").toggle(function(){
+      $("#par1").css("color","green");
+      $("#par1").css("font-size","10px");},function(){
+      $("#par1").css("color","red");
+      $("#par1").css("font-size","20px");},function(){
+      $("#par1").css("color","blue");
+      $("#par1").css("font-size","30px");},function(){
+      $("#par1").css("color","black");
+      $("#par1").css("font-size","1em");
+   });
+
+});                                           
+</script>                                                   
+</head>
+<body> 
+<p id="par1">Щелкните на содержимом данного абзаца для того, чтобы переключить оформление. При повторных нажатиях абзац будет оформляться по разному. </p>
+<input id="but1" type="button" value="Сбросить оформление на стандартное" />
+</body>
+</html>

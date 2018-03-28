@@ -1,0 +1,39 @@
+<html>                                                                  
+<head>                                                              
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#but1").click(function(){
+      alert($("#par1").css("color"));
+   });
+   $("#but2").click(function(){
+      $("#par2").css("color","red");
+   });
+   $("#but3").click(function(){
+      $("#par3").css({"font-size":"27px","color":"red","font-family":"Arial"});
+   });
+   $("#text1").focus(function(){
+      $("#text1").val("");
+   });
+   $("#but4").click(function(){
+      $("#par4").css("font-size",$("#text1").val()+"px");
+   });
+
+});                                 
+</script>                                                          
+</head>
+<body> 
+<p id="par1" style="color:blue;">Это первый абзац.</p>
+<p id="par2">Это второй абзац.</p>
+<p id="par3">Это третий абзац.</p>
+<p id="par4">Это четвертый абзац.</p>
+<input id="but1" type="button" value="Вывести значение свойства color первого абзаца" />
+<input id="but2" type="button" value="Изменить цвет второго абзаца" />
+<br /><br />
+<input id="but3" type="button" value="Оформить третий абзац установив несколько свойств одновременно" />
+<br /><br />
+<input id="text1" type="text" style="width:180px" value="Введите размер шрифта в пикс."/>
+<input id="but4" type="button" value="Изменить размер шрифта четвертого абзаца на указанный" />
+</body>
+</html>

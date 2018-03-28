@@ -1,0 +1,57 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<style type="text/css">
+#select1 .ui-selecting
+{
+background:#E3B1F3;
+border-style:solid; 
+border-width:1px;
+}
+#select1 .ui-selected 
+{
+font-weight:bold;
+font-size:1.1em;
+border-style:solid; 
+border-width:1px;
+background: #B964D4; 
+}
+#select1 
+{
+list-style-type:none; 
+margin:0; 
+padding:0; 
+width:45%; 
+}
+#select1 li 
+{ 
+margin:2px;
+padding: 0.4em; 
+border-style:solid; 
+border-width:1px;
+height: 18px; 
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+
+   $("#select1").selectable();
+
+});
+</script>
+</head>
+<body>
+<p>ўелкните на любой пункт списка, чтобы выделить его. «ажав клавишу Ctrl ¬ы можете 
+выделить несколько элементов списка за раз.</p>
+<ol id="select1" class="ui-widget">
+<li>я первый пункт списка</li>
+<li>я второй пункт списка</li>
+<li>я третий пункт списка</li>
+<li>я четвертый пункт списка</li>
+<li>я п€тый пункт списка</li>
+</ol>
+</body>
+</html>

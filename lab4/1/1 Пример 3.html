@@ -1,0 +1,28 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+
+//Установим размер шрифта всех абзацев равным 20 пикселям
+   $("p").css("fontSize","20px");
+//Изменим на зеленый цвет шрифта элемента с id=el2
+   $("#el2").css("color","green");
+//Изменим на красный цвет шрифта элемента с class=el3
+   $(".el3").css("color","red");
+//Сделаем жирным шрифт элементов с id=el2 и class=el3
+   $("#el2,.el3").css("fontWeight","bold");
+//Изменим на синий цвет текста кнопки
+   $(":input").css("color","blue");
+
+});
+</script>
+<body>
+<p>Я первый элемент.</p>
+<p id="el2">Я второй элемент.</p>
+<p class="el3">Я третий элемент.</p>
+<input type="button" value="Я кнопка" />
+<br /><br />
+</body>
+</html>

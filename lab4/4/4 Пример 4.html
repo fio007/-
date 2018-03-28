@@ -1,0 +1,37 @@
+<html>                                                                  
+<head>    
+<style type="text/css">
+#wrap1
+{
+font-family:verdana;
+color:#06799f;
+font-size:25px;
+font-weight:bold;
+}
+</style>                                                      
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">   
+$(document).ready(function(){
+
+   $("#but1").click(function(){
+       $("#par1").wrap("<i></i>");
+   });
+   $("#but2").click(function(){
+       $("#par2").wrap("<b></b>");
+   });
+   $("#but3").click(function(){
+       $("#par3").wrap("<div id='wrap1'></div>");
+   });
+
+});                                           
+</script>                                                          
+</head>
+<body> 
+<p id="par1">Я первый абзац.</p>
+<p id="par2">Я второй абзац.</p>
+<p id="par3">Я третий абзац.</p>
+<input id="but1" type="button" value="Обернуть первый абзац" />
+<input id="but2" type="button" value="Обернуть второй абзац" />
+<input id="but3" type="button" value="Обернуть третий абзац" />
+</body>
+</html>

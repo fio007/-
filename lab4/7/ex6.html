@@ -1,0 +1,55 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<style type="text/css">
+#drag1
+{
+padding:15px;
+border-style:solid;
+border-width:1px;
+width:130px;
+height:100px;
+}
+.ui-draggable-dragging
+{
+background-color:#ecbfda;
+}
+#drop1
+{
+position:absolute;
+left:200px;
+top:200px;
+padding:15px;
+border-style:solid;
+border-width:1px;
+width:130px;
+height:100px;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+
+   $("#drag1").draggable({stack:"#drop1"});
+   $("#drop1").droppable({
+      over:function(){
+         $("#drag1").css("background-color","#d7fa99");
+         $("#drop1").css("background-color","#d7fa99");
+      },
+      drop:function(){
+         $("#drag1").css("display","none");
+         $("#drop1").css("background-color","#c4f66f");
+         $("#drop1").html("Перемещение завершено успешно.");
+         alert("Вы перетащили элемент с id=drag1 в область с id=drop1.");
+      }
+   });
+
+});
+</script>
+</head>
+<body>
+<div id="drag1" class="ui-widget ui-corner-all">Вы можете перетаскивать меня мышкой. </div>
+<div id="drop1" class="ui-widget ui-corner-all">Перетащите элемент сюда.</p>
+</body>
+</html>

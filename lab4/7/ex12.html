@@ -1,0 +1,70 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<style type="text/css">
+#sort1 
+{
+list-style-type:none; 
+margin:0; 
+padding:0; 
+width:40%; 
+}
+#sort1 li 
+{ 
+margin:2px;
+padding: 0.4em; 
+border-style:solid; 
+border-width:1px;
+height: 18px; 
+background-color:#c5f97b;
+}
+#sort2 
+{
+position:absolute;
+top:48px;
+left:400px;
+list-style-type:none; 
+margin:0; 
+padding:0; 
+width:40%; 
+}
+#sort2 li 
+{ 
+background-color:#dd9af3;
+margin:2px;
+padding: 0.4em; 
+border-style:solid; 
+border-width:1px;
+height: 18px; 
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+  
+   $("#sort1,#sort2").sortable({connectWith:".connect"});
+
+});
+</script>
+</head>
+<body>
+<p>Элементы одного списка могут быть перемещены в другой.</p>
+<ol id="sort1" class="ui-widget connect">
+<li>Я первый пункт списка</li>
+<li>Я второй пункт списка</li>
+<li>Я третий пункт списка</li>
+<li>Я четвертый пункт списка</li>
+<li>Я пятый пункт списка</li>
+</ol>
+<br />
+<ol id="sort2" class="ui-widget connect">
+<li>Я первый пункт списка</li>
+<li>Я второй пункт списка</li>
+<li>Я третий пункт списка</li>
+<li>Я четвертый пункт списка</li>
+<li>Я пятый пункт списка</li>
+</ol>
+</body>
+</html>
